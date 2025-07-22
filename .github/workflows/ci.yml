@@ -7,28 +7,21 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  uv-example:
+    name: python
     runs-on: ubuntu-latest
 
     steps:
-      - name: ⬇️ Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: 🐍 Set up Python
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: "Set up Python"
         uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
-
-      - name: 💾 Install uv
-        run: curl -Ls https://astral.sh/uv/install.sh | sh
-
-      - name: 🧪 Set up virtualenv + install dependencies
-        run: |
-          uv venv
-          source .venv/bin/activate
-          uv pip install .
+          python-version-file: "pyproject.toml"
 
       - name: ✅ Run tests
         run: |
-          source .venv/bin/activate
           which pytest
