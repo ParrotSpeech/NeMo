@@ -26,9 +26,9 @@ jobs:
         run: |
           uv venv
           source .venv/bin/activate
-          uv pip install -r pyproject.toml
+          uv pip install .
 
       - name: ✅ Run tests
         run: |
           source .venv/bin/activate
-          pytest
+          which pytest
