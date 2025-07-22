@@ -1,5 +1,5 @@
 [project]
-name = "nemo"
+name = "parrotspeech"
 version = "0.1.0"
 requires-python = ">=3.10"
 description = "ParrotSpeech"
