@@ -1,0 +1,11 @@
+[project]
+name = "nemo"
+version = "0.1.0"
+description = "ParrotSpeech"
+dependencies = [
+  "requests"
+]
+
+
+[project.optional-dependencies]
+dev = ["pytest"]
